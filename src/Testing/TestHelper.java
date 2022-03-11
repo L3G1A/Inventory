@@ -103,11 +103,9 @@ public class TestHelper {
 
             String[] invoice2 = {"1", "1", "2", "4323.55", "0", "False", "Complete", "1-3-3", "2-24-2022"};
             writer.writeNext(invoice2);
-            writer.close();
 
             String[] invoice3 = {"1", "2", "1", "643.55", "0", "False", "Processing", "1-3-3", "3-1-2022"};
             writer.writeNext(invoice3);
-            writer.close();
 
             String[] invoice4 = {"1", "2", "2", "5434.55", "32.33", "True", "Processing", "1-3-3", "3-3-2022"};
             writer.writeNext(invoice4);
@@ -116,6 +114,7 @@ public class TestHelper {
         }
         catch (IOException e) {
             e.printStackTrace();
+
         }
 
     }

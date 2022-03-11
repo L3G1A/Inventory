@@ -23,7 +23,7 @@ public class StoreFront {
 
     private ArrayList<Invoice> Invoices;
 
-    private ArrayList<SalePerson> SalesPeople;
+    private ArrayList<SalesPerson> SalesPeople;
 
 
     public static  StoreFront getInstance(){
