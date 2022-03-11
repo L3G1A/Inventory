@@ -6,6 +6,7 @@ public class Product {
     private int Id;
     private String Name;
     private double SellingPrice;
+    private double CostPrice;
     private int QuantityOnHand;
     private double TotalSales;
     private double TotalCost;
@@ -14,10 +15,11 @@ public class Product {
     private int Warehouse;
     private boolean IsBelowFive;
 
-    public Product(int Id, String Name, double SellingPrice, int QuantityOnHand, double TotalSales, double TotalCost, double TotalProfitPercent, String Category, int Warehouse, boolean IsBelowFive){
+    public Product(int Id, String Name, double SellingPrice, double CostPrice, int QuantityOnHand, double TotalSales, double TotalCost, double TotalProfitPercent, String Category, int Warehouse, boolean IsBelowFive){
         this.Id = Id;
         this.Name = Name;
         this.SellingPrice = SellingPrice;
+        this.CostPrice = CostPrice;
         this.QuantityOnHand = QuantityOnHand;
         this.TotalSales = TotalSales;
         this.TotalCost = TotalCost;

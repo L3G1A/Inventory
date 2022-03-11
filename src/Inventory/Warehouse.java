@@ -12,7 +12,7 @@ import com.opencsv.CSVWriter;
 
 public class Warehouse {
 
-    private ArrayList<Product> Products;
+    private ArrayList<Product> Products = new ArrayList<Product>();
     private int id;
 
     public Warehouse(int id){
@@ -36,10 +36,10 @@ public class Warehouse {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 String[] productData = line.replace("\"", "").split(",");
-                System.out.println((productData[0]));
-                //if(Integer.valueOf(productData[10]) == this.id){
-                    this.Products.add( new Product(Integer.valueOf(productData[0]), productData[1], Double.valueOf(productData[2]), Integer.valueOf(productData[2]), Double.valueOf(productData[4]), Double.valueOf(productData[5]), Double.valueOf(productData[6]), productData[7], Integer.valueOf(productData[8]), Boolean.valueOf(productData[9])));
-                //}
+
+                if(Integer.valueOf(productData[10]) == this.id){
+                    this.Products.add(new Product(Integer.valueOf(productData[0]), productData[1], Double.valueOf(productData[2]), Double.valueOf(productData[3]), Integer.valueOf(productData[4]), Double.valueOf(productData[5]), Double.valueOf(productData[6]), Double.valueOf(productData[7]), productData[8], Integer.valueOf(productData[10]), Boolean.valueOf(productData[9])));
+                }
             }
         }
         catch (Exception e)

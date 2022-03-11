@@ -5,6 +5,7 @@ import Inventory.Warehouse;
 import com.opencsv.exceptions.CsvValidationException;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class WarehouseTestCases {
@@ -14,19 +15,23 @@ public class WarehouseTestCases {
     //this is an example test case, each class will have it own test case java file and class
     @Test
     public void test() {
-
+        _testHelper.ClearTestData();
         //here we just initliaze the test data into the database
         _testHelper.InitializeTestData();
-
-
         //Here you do any computation you need
-        Warehouse warehouse = new Warehouse(1);
+        //Always make sure you have it with try and catch
+        try{
+            Warehouse warehouse = new Warehouse(1);
 
-        warehouse.LoadProductData();
+            warehouse.LoadProductData();
 
-        warehouse.GetProducts();
+            assertEquals(3, warehouse.GetProducts().size());
 
-
+        }
+       catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
 
 
@@ -36,7 +41,7 @@ public class WarehouseTestCases {
 
 
         //once the assert is done you can then clear the data from the database
-        //_testHelper.ClearTestData();
+        _testHelper.ClearTestData();
     }
 
 }
