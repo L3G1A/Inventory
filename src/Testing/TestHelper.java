@@ -78,10 +78,10 @@ public class TestHelper {
         try {
             FileWriter output = new FileWriter(currentDir + file, true);
             CSVWriter writer = new CSVWriter(output);
-            String[] customer1 = {"1", "Bill", "Williams", "7563 Bellflower Blvd", "United States", "California", "90433", "12", "Long Beach", "1-2"};
+            String[] customer1 = {"1", "Bill", "Williams", "7563 Bellflower Blvd", "United States", "California", "90433", "12", "Long Beach"};
             writer.writeNext(customer1);
 
-            String[] customer2 = {"1", "Chris", "Harris", "1343 Beach Ave", "United States", "Arizona", "84924", "6", "Phoenix", "3-4"};
+            String[] customer2 = {"1", "Chris", "Harris", "1343 Beach Ave", "United States", "Arizona", "84924", "6", "Phoenix"};
             writer.writeNext(customer2);
             writer.close();
 
@@ -98,16 +98,16 @@ public class TestHelper {
         try {
             FileWriter output = new FileWriter(currentDir + file, true);
             CSVWriter writer = new CSVWriter(output);
-            String[] invoice1 = {"1", "1", "1", "103.55", "10.65", "True", "Shipped", "1-2-3", "2-10-2022"};
+            String[] invoice1 = {"1", "1", "1", "103.55", "10.65", "true", "Shipped", "1-2-3", "2-10-2022"};
             writer.writeNext(invoice1);
 
-            String[] invoice2 = {"1", "1", "2", "4323.55", "0", "False", "Complete", "1-3-3", "2-24-2022"};
+            String[] invoice2 = {"1", "1", "2", "4323.55", "0", "false", "Complete", "1-3-3", "2-24-2022"};
             writer.writeNext(invoice2);
 
-            String[] invoice3 = {"1", "2", "1", "643.55", "0", "False", "Processing", "1-3-3", "3-1-2022"};
+            String[] invoice3 = {"1", "2", "1", "643.55", "0", "false", "Processing", "1-3-3", "3-1-2022"};
             writer.writeNext(invoice3);
 
-            String[] invoice4 = {"1", "2", "2", "5434.55", "32.33", "True", "Processing", "1-3-3", "3-3-2022"};
+            String[] invoice4 = {"1", "2", "2", "5434.55", "32.33", "true", "Processing", "1-3-3", "3-3-2022"};
             writer.writeNext(invoice4);
             writer.close();
 
@@ -150,6 +150,19 @@ public class TestHelper {
 
         //clear customer database
         file = new File("customerdatabase.csv");
+        try {
+            FileWriter output = new FileWriter(currentDir + file);
+            CSVWriter writer = new CSVWriter(output);
+            String[] product1 = {};
+            writer.close();
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //clear invoice database
+        file = new File("invoicedatabase.csv");
         try {
             FileWriter output = new FileWriter(currentDir + file);
             CSVWriter writer = new CSVWriter(output);

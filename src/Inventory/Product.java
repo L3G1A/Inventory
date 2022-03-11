@@ -29,5 +29,9 @@ public class Product {
         this.IsBelowFive = IsBelowFive;
     }
 
+    public int getId(){
+        return Id;
+    }
+
 
 }

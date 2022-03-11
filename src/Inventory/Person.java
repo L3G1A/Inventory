@@ -10,4 +10,8 @@ public class Person {
         this.LastName = LastName;
         this.Id = Id;
     }
+
+    public int GetId(){
+        return Id;
+    }
 }

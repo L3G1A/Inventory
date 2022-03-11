@@ -14,7 +14,9 @@ public class StoreFrontTesting {
     @Test
     public void test() {
 
-        //here we just initliaze the test data into the database
+        //here we just initliaze the test data into the database and make sure they test databases are all clear
+        _testHelper.ClearTestData();
+
         _testHelper.InitializeTestData();
 
 
@@ -28,6 +30,65 @@ public class StoreFrontTesting {
         assertNotNull( storeFront);
 
         //once the assert is done you can then clear the data from the database
+        _testHelper.ClearTestData();
+    }
+
+
+    @Test
+    public void LoadInoivceDataTest() {
+        _testHelper.ClearTestData();
+
+        _testHelper.InitializeTestData();
+
+
+        StoreFront storeFront = StoreFront.getInstance();
+        storeFront.LoadWarehouseData();
+        storeFront.LoadClientData();
+
+        storeFront.LoadInvoiceData();
+        assertEquals(4, storeFront.GetInvoces().size());
+
+
+
+
+        assertNotNull( storeFront);
+
+        _testHelper.ClearTestData();
+    }
+
+    @Test
+    public void LoadClientDataTest() {
+        _testHelper.ClearTestData();
+
+        _testHelper.InitializeTestData();
+
+
+        StoreFront storeFront = StoreFront.getInstance();
+        storeFront.LoadClientData();
+        assertEquals(2, storeFront.GetClients().size());
+
+
+
+        assertNotNull( storeFront);
+
+        _testHelper.ClearTestData();
+    }
+
+    @Test
+    public void LoadSalesPersonDataTest() {
+        _testHelper.ClearTestData();
+
+        _testHelper.InitializeTestData();
+
+
+        StoreFront storeFront = StoreFront.getInstance();
+        storeFront.LoadSalespersonData();
+        assertEquals(2, storeFront.GetClients().size());
+
+
+
+        assertNotNull( storeFront);
+
         _testHelper.ClearTestData();
     }
 
