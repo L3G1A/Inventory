@@ -11,6 +11,79 @@ public class Invoice {
     private double DeliveryFee;
     private boolean Delivery;
     private String Status;
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public Customer getClient() {
+        return client;
+    }
+
+    public void setClient(Customer client) {
+        this.client = client;
+    }
+
+    public Inventory.SalesPerson getSalesPerson() {
+        return SalesPerson;
+    }
+
+    public void setSalesPerson(Inventory.SalesPerson salesPerson) {
+        SalesPerson = salesPerson;
+    }
+
+    public double getInvoiceTotalPrice() {
+        return InvoiceTotalPrice;
+    }
+
+    public void setInvoiceTotalPrice(double invoiceTotalPrice) {
+        InvoiceTotalPrice = invoiceTotalPrice;
+    }
+
+    public double getDeliveryFee() {
+        return DeliveryFee;
+    }
+
+    public void setDeliveryFee(double deliveryFee) {
+        DeliveryFee = deliveryFee;
+    }
+
+    public boolean isDelivery() {
+        return Delivery;
+    }
+
+    public void setDelivery(boolean delivery) {
+        Delivery = delivery;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    public ArrayList<Product> getItems() {
+        return Items;
+    }
+
+    public void setItems(ArrayList<Product> items) {
+        Items = items;
+    }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
     private ArrayList<Product> Items;
     private String Date;
 

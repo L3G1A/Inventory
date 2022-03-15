@@ -23,6 +23,22 @@ public class Warehouse {
         return this.Products;
     }
 
+    public ArrayList<Product> getProducts() {
+        return Products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        Products = products;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void LoadProductData() {
         //Creation Scheme
         //Product: id, Name, SellingPrice, CostPrice, QuantityOnHand, TotalSales, TotalCost, TotalProfitPercent, Category, IsBelowFive, warehouse

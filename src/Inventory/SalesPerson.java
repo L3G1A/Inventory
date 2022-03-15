@@ -9,4 +9,20 @@ public class SalesPerson extends Person{
         this.CommissionPercent = CommissionPercent;
         this.TotalCommissionEarned = TotalCommissionEarned;
     }
+
+    public double getCommissionPercent() {
+        return CommissionPercent;
+    }
+
+    public void setCommissionPercent(double commissionPercent) {
+        CommissionPercent = commissionPercent;
+    }
+
+    public double getTotalCommissionEarned() {
+        return TotalCommissionEarned;
+    }
+
+    public void setTotalCommissionEarned(double totalCommissionEarned) {
+        TotalCommissionEarned = totalCommissionEarned;
+    }
 }
