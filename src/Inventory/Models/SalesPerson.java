@@ -1,6 +1,6 @@
-package Inventory;
+package Inventory.Models;
 
-public class SalesPerson extends Person{
+public class SalesPerson extends Person {
     private double CommissionPercent;
     private double TotalCommissionEarned;
 

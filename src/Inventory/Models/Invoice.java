@@ -1,4 +1,4 @@
-package Inventory;
+package Inventory.Models;
 
 import java.util.ArrayList;
 
@@ -28,11 +28,11 @@ public class Invoice {
         this.client = client;
     }
 
-    public Inventory.SalesPerson getSalesPerson() {
+    public Inventory.Models.SalesPerson getSalesPerson() {
         return SalesPerson;
     }
 
-    public void setSalesPerson(Inventory.SalesPerson salesPerson) {
+    public void setSalesPerson(Inventory.Models.SalesPerson salesPerson) {
         SalesPerson = salesPerson;
     }
 

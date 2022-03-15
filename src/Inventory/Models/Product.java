@@ -1,4 +1,4 @@
-package Inventory;
+package Inventory.Models;
 
 import org.hamcrest.core.Is;
 

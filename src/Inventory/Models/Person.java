@@ -1,4 +1,4 @@
-package Inventory;
+package Inventory.Models;
 
 public class Person {
     private String FirstName;

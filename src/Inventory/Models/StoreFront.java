@@ -1,10 +1,7 @@
-package Inventory;
+package Inventory.Models;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.lang.reflect.Array;
-import java.security.spec.RSAKeyGenParameterSpec;
 import java.util.ArrayList;
 import java.util.List;
 

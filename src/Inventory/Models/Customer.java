@@ -1,8 +1,8 @@
-package Inventory;
+package Inventory.Models;
 
-import java.util.ArrayList;
+import Inventory.Models.Person;
 
-public class Customer extends Person{
+public class Customer extends Person {
 
     private String StreetAddress;
     private String Country;

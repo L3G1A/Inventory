@@ -1,8 +1,6 @@
 package Testing;
 
-import Inventory.StoreFront;
-import Inventory.Warehouse;
-import com.opencsv.exceptions.CsvValidationException;
+import Inventory.Models.Warehouse;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,6 +1,6 @@
 package Testing;
 
-import Inventory.StoreFront;
+import Inventory.Models.StoreFront;
 
 import static org.junit.Assert.*;
 
