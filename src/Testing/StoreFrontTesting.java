@@ -92,4 +92,22 @@ public class StoreFrontTesting {
         _testHelper.ClearTestData();
     }
 
+    @Test
+    public void LoadWarehouseTestData() {
+        _testHelper.ClearTestData();
+
+        _testHelper.InitializeTestData();
+
+
+        StoreFront storeFront = StoreFront.getInstance();
+        storeFront.LoadWarehouseData();
+        assertEquals(3, storeFront.getWarehouse1().GetProducts().size());
+
+
+
+        assertNotNull( storeFront);
+
+        _testHelper.ClearTestData();
+    }
+
 }

@@ -12,6 +12,7 @@ public class Warehouse {
 
     public Warehouse(int id){
         this.id = id;
+        LoadProductData();
     }
 
     public ArrayList<Product> GetProducts(){
@@ -38,8 +39,10 @@ public class Warehouse {
         //Creation Scheme
         //Product: id, Name, SellingPrice, CostPrice, QuantityOnHand, TotalSales, TotalCost, TotalProfitPercent, Category, IsBelowFive, warehouse
     //public Product(int Id, String Name, double SellingPrice, int QuantityOnHand, double TotalSales, double TotalCost, double TotalProfitPercent, String Category, int Warehouse, boolean IsBelowFive){
+        this.setProducts(new ArrayList<>());
 
         String file = System.getProperty("user.dir") + "\\Databases\\productdatabase.csv";
+
         try
         {
             BufferedReader reader = new BufferedReader(new FileReader(file));

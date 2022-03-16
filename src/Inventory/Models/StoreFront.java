@@ -20,6 +20,62 @@ public class StoreFront {
 
     private ArrayList<Customer> Clients = new ArrayList<Customer>();
 
+    public static StoreFront get_storefront() {
+        return _storefront;
+    }
+
+    public static void set_storefront(StoreFront _storefront) {
+        StoreFront._storefront = _storefront;
+    }
+
+    public ArrayList<Customer> getClients() {
+        return Clients;
+    }
+
+    public void setClients(ArrayList<Customer> clients) {
+        Clients = clients;
+    }
+
+    public ArrayList<Warehouse> getWarehouses() {
+        return Warehouses;
+    }
+
+    public void setWarehouses(ArrayList<Warehouse> warehouses) {
+        Warehouses = warehouses;
+    }
+
+    public ArrayList<Invoice> getInvoices() {
+        return Invoices;
+    }
+
+    public void setInvoices(ArrayList<Invoice> invoices) {
+        Invoices = invoices;
+    }
+
+    public ArrayList<SalesPerson> getSalesPeople() {
+        return SalesPeople;
+    }
+
+    public void setSalesPeople(ArrayList<SalesPerson> salesPeople) {
+        SalesPeople = salesPeople;
+    }
+
+    public Warehouse getWarehouse1() {
+        return warehouse1;
+    }
+
+    public void setWarehouse1(Warehouse warehouse1) {
+        this.warehouse1 = warehouse1;
+    }
+
+    public Warehouse getWarehouse2() {
+        return warehouse2;
+    }
+
+    public void setWarehouse2(Warehouse warehouse2) {
+        this.warehouse2 = warehouse2;
+    }
+
     private ArrayList<Warehouse> Warehouses;
 
 
@@ -51,7 +107,7 @@ public class StoreFront {
         //Creation Scheme
         //Salesperson: id, firstname, lastname, CommisionPercent, TotalCommissionEarned
         //(int Id, String FirstName, String LastName, double CommissionPercent, double TotalCommissionEarned) {
-
+        this.setSalesPeople(new ArrayList<>());
         String file = System.getProperty("user.dir") + "\\Databases\\salespersondatabase.csv";
         try
         {
@@ -81,6 +137,7 @@ public class StoreFront {
         //Creation Scheme
         //Customer: id, firstname, lastname, StreetAddress, Country, State, ZipCode, SalesTaxPercent, City, {Orders}
         //(int Id, String FirstName, String LastName, String StreetAddress, String Country, String State, int ZipCode, double SalesTaxPercent, String City) {
+        this.setClients(new ArrayList<>());
 
         String file = System.getProperty("user.dir") + "\\Databases\\customerdatabase.csv";
         try
@@ -106,6 +163,7 @@ public class StoreFront {
     }
 
     public void LoadInvoiceData(){
+        this.setInvoices(new ArrayList<>());
 
         //Creation Scheme
         //Invoice: id, CustomerID, SalespersonID, InvoicePriceTotal, DeliveryFree, Delivery, Status, Items, Date
