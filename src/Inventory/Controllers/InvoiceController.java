@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class InvoiceController {
 
-    private void saveInvoiceToDatastore(Invoice invoice){
+    private void saveInvoiceToDatastore(Invoice invoice) throws Exception {
         //Invoice: id, CustomerID, SalespersonID, InvoicePriceTotal, DeliveryFree, Delivery, Status, Items, Date
 
         File file = new File("invoicedatabase.csv");
@@ -36,9 +36,18 @@ public class InvoiceController {
             e.printStackTrace();
         }
     }
-    public void createInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date){
+    public void createInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date) throws Exception {
        int id = StoreFront.getInstance().GetInvoces().size();
+        if(Items.size() == 0){
+            throw new Exception("Invoice cannot have empty items");
+        }
+        if(SalesPerson == null){
+            throw new Exception("Salesperson cannot be null");
+        }
+        if(client == null){
+            throw new Exception("Client cannot be null");
 
+        }
         Invoice invoice = new Invoice(id, client, SalesPerson, InvoiceTotalPrice, DeliveryFee, Delivery, Status, Items, Date);
         saveInvoiceToDatastore(invoice);
         ArrayList<Invoice> invoices = StoreFront.getInstance().getInvoices();
