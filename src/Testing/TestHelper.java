@@ -27,19 +27,19 @@ public class TestHelper {
         try {
             FileWriter output = new FileWriter(currentDir + file, true);
             CSVWriter writer = new CSVWriter(output);
-            String[] product1 = {"1", "Name1", "10.34", "4.55", "20", "22", "30.22", "43.3", "Category", "false", "1"};
+            String[] product1 = {"1", "Name1", "10.34", "46.55", "20", "22", "30.22", "43.3", "Category1", "false", "1"};
             writer.writeNext(product1);
 
-            String[] product2 = {"2", "Name1", "10.34", "4.55", "543", "23", "1.22", "1241.3", "Category", "true", "2"};
+            String[] product2 = {"2", "Name2", "433.34", "45.55", "4", "23", "1.22", "1241.3", "Category2", "true", "2"};
             writer.writeNext(product2);
 
-            String[] product3 = {"3", "Name1", "10.34", "4.55", "44", "2", "12.22", "124.3", "Category", "true", "1"};
+            String[] product3 = {"3", "Name3", "54.34", "43.55", "1", "2", "12.22", "124.3", "Category2", "true", "1"};
             writer.writeNext(product3);
 
-            String[] product4 = {"4", "Name1", "10.34", "4.55", "31", "34", "42.22", "42.3", "Category", "true", "1"};
+            String[] product4 = {"4", "Name4", "3.34", "4432.55", "2", "34", "42.22", "42.3", "Category1", "true", "1"};
             writer.writeNext(product4);
 
-            String[] product5 = {"5", "Name1", "10.34", "4.55", "3", "5", "124.22", "1421.3", "Category", "false", "2"};
+            String[] product5 = {"5", "Name5", "55.34", "44.55", "300", "5", "124.22", "1421.3", "Category3", "false", "2"};
             writer.writeNext(product5);
 
 
