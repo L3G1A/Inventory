@@ -1,5 +1,6 @@
 package Testing;
 
+import Inventory.Controllers.InventoryController;
 import Inventory.Models.Product;
 import Inventory.Models.StoreFront;
 
@@ -112,42 +113,6 @@ public class StoreFrontTesting {
 
         _testHelper.ClearTestData();
     }
-    @Test
-    public void GetAllProductsDecreasingProfitPercentTest() {
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
-
-        assertEquals( 1421.3, products.get(0).getTotalProfitPercent());
-        assertEquals( 1241.3, products.get(1).getTotalProfitPercent());
-        assertEquals( 124.3, products.get(2).getTotalProfitPercent());
-        assertEquals( 43.3, products.get(3).getTotalProfitPercent());
-        assertEquals( 42.3, products.get(4).getTotalProfitPercent());
-
-        _testHelper.ClearTestData();
-    }
-
-
-    @Test
-    public void GetAllLowProducts() {
-        _testHelper.ClearTestData();
-
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
-        ArrayList<Product> products = storeFront.GetLowProducts();
-
-        assertEquals( 1, products.get(0).getQuantityOnHand());
-        assertEquals( 2, products.get(1).getQuantityOnHand());
-        assertEquals( 4, products.get(2).getQuantityOnHand());
-
-        _testHelper.ClearTestData();
-    }
 
 }
