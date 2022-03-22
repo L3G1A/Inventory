@@ -1,14 +1,10 @@
 package Testing;
 
-import Inventory.Controllers.InventoryController;
-import Inventory.Models.Product;
 import Inventory.Models.StoreFront;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 public class StoreFrontTesting {
     TestHelper _testHelper = new TestHelper();
@@ -46,11 +42,11 @@ public class StoreFrontTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
-        storeFront.LoadClientData();
+        storeFront.loadWarehouseData();
+        storeFront.loadCustomerData();
 
-        storeFront.LoadInvoiceData();
-        assertEquals(4, storeFront.GetInvoces().size());
+        storeFront.loadInvoiceData();
+        assertEquals(4, storeFront.getInvoces().size());
 
 
 
@@ -68,8 +64,8 @@ public class StoreFrontTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadClientData();
-        assertEquals(2, storeFront.GetClients().size());
+        storeFront.loadCustomerData();
+        assertEquals(2, storeFront.getCustomers().size());
 
 
 
@@ -86,8 +82,8 @@ public class StoreFrontTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadSalespersonData();
-        assertEquals(2, storeFront.GetClients().size());
+        storeFront.loadSalespersonData();
+        assertEquals(2, storeFront.getCustomers().size());
 
 
 
@@ -104,8 +100,8 @@ public class StoreFrontTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
-        assertEquals(3, storeFront.getWarehouse1().GetProducts().size());
+        storeFront.loadWarehouseData();
+        assertEquals(3, storeFront.getWarehouse1().getProducts().size());
 
 
 

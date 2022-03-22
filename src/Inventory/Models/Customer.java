@@ -1,45 +1,43 @@
 package Inventory.Models;
 
-import Inventory.Models.Person;
-
 public class Customer extends Person {
 
-    private String StreetAddress;
-    private String Country;
-    private String State;
-    private int ZipCode;
-    private double SalesTaxPercent;
+    private String streetAddress;
+    private String country;
+    private String state;
+    private int zipCode;
+    private double salesTaxPercent;
 
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
     public int getZipCode() {
-        return ZipCode;
+        return zipCode;
     }
 
     public void setZipCode(int zipCode) {
-        ZipCode = zipCode;
+        this.zipCode = zipCode;
     }
 
     public double getSalesTaxPercent() {
-        return SalesTaxPercent;
+        return salesTaxPercent;
     }
 
     public void setSalesTaxPercent(double salesTaxPercent) {
-        SalesTaxPercent = salesTaxPercent;
+        this.salesTaxPercent = salesTaxPercent;
     }
 
     public String getCity() {
@@ -51,23 +49,23 @@ public class Customer extends Person {
     }
 
     public String getStreetAddress() {
-        return StreetAddress;
+        return streetAddress;
     }
 
     public void setStreetAddress(String streetAddress) {
-        StreetAddress = streetAddress;
+        this.streetAddress = streetAddress;
     }
 
     private String City;
 
-    public Customer(int Id, String FirstName, String LastName, String StreetAddress, String Country, String State, int ZipCode, double SalesTaxPercent, String City) {
-        super(Id, FirstName, LastName);
-        this.StreetAddress = StreetAddress;
-        this.Country = Country;
-        this.State = State;
-        this.ZipCode = ZipCode;
-        this.SalesTaxPercent = SalesTaxPercent;
-        this.City = City;
+    public Customer(int id, String firstName, String lastName, String streetAddress, String country, String state, int zipCode, double salesTaxPercent, String city) {
+        super(id, firstName, lastName);
+        this.streetAddress = streetAddress;
+        this.country = country;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.salesTaxPercent = salesTaxPercent;
+        this.City = city;
     }
 
 

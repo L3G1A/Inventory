@@ -1,46 +1,44 @@
 package Inventory.Models;
 
-import org.hamcrest.core.Is;
-
 public class Product {
-    private int Id;
-    private String Name;
-    private double SellingPrice;
-    private double CostPrice;
-    private int QuantityOnHand;
-    private double TotalSales;
-    private double TotalCost;
-    private double TotalProfitPercent;
-    private String Category;
+    private int id;
+    private String name;
+    private double sellingPrice;
+    private double costPrice;
+    private int quantityOnHand;
+    private double totalSales;
+    private double totalCost;
+    private double totalProfitPercent;
+    private String category;
 
     public double getTotalSales() {
-        return TotalSales;
+        return totalSales;
     }
 
     public void setTotalSales(double totalSales) {
-        TotalSales = totalSales;
+        this.totalSales = totalSales;
     }
 
     public String getCategory() {
-        return Category;
+        return category;
     }
 
     public void setCategory(String category) {
-        Category = category;
+        this.category = category;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "Id=" + Id +
-                ", Name='" + Name + '\'' +
-                ", SellingPrice=" + SellingPrice +
-                ", CostPrice=" + CostPrice +
-                ", QuantityOnHand=" + QuantityOnHand +
-                ", TotalSales=" + TotalSales +
-                ", TotalCost=" + TotalCost +
-                ", TotalProfitPercent=" + TotalProfitPercent +
-                ", Category='" + Category + '\'' +
+                "Id=" + id +
+                ", Name='" + name + '\'' +
+                ", SellingPrice=" + sellingPrice +
+                ", CostPrice=" + costPrice +
+                ", QuantityOnHand=" + quantityOnHand +
+                ", TotalSales=" + totalSales +
+                ", TotalCost=" + totalCost +
+                ", TotalProfitPercent=" + totalProfitPercent +
+                ", Category='" + category + '\'' +
                 ", Warehouse=" + Warehouse +
                 ", IsBelowFive=" + IsBelowFive +
                 '}';
@@ -63,76 +61,76 @@ public class Product {
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public double getSellingPrice() {
-        return SellingPrice;
+        return sellingPrice;
     }
 
     public void setSellingPrice(double sellingPrice) {
-        SellingPrice = sellingPrice;
+        this.sellingPrice = sellingPrice;
     }
 
     public double getCostPrice() {
-        return CostPrice;
+        return costPrice;
     }
 
     public void setCostPrice(double costPrice) {
-        CostPrice = costPrice;
+        this.costPrice = costPrice;
     }
 
     public int getQuantityOnHand() {
-        return QuantityOnHand;
+        return quantityOnHand;
     }
 
     public void setQuantityOnHand(int quantityOnHand) {
-        QuantityOnHand = quantityOnHand;
+        this.quantityOnHand = quantityOnHand;
     }
 
     public double getTotalCost() {
-        return TotalCost;
+        return totalCost;
     }
 
     public void setTotalCost(double totalCost) {
-        TotalCost = totalCost;
+        this.totalCost = totalCost;
     }
 
     public double getTotalProfitPercent() {
-        return TotalProfitPercent;
+        return totalProfitPercent;
     }
 
     public void setTotalProfitPercent(double totalProfitPercent) {
-        TotalProfitPercent = totalProfitPercent;
+        this.totalProfitPercent = totalProfitPercent;
     }
 
     private int Warehouse;
     private boolean IsBelowFive;
 
-    public Product(int Id, String Name, double SellingPrice, double CostPrice, int QuantityOnHand, double TotalSales, double TotalCost, double TotalProfitPercent, String Category, int Warehouse, boolean IsBelowFive){
-        this.Id = Id;
-        this.Name = Name;
-        this.SellingPrice = SellingPrice;
-        this.CostPrice = CostPrice;
-        this.QuantityOnHand = QuantityOnHand;
-        this.TotalSales = TotalSales;
-        this.TotalCost = TotalCost;
-        this.TotalProfitPercent = TotalProfitPercent;
-        this.Category = Category;
-        this.Warehouse = Warehouse;
-        this.IsBelowFive = IsBelowFive;
+    public Product(int id, String name, double sellingPrice, double costPrice, int quantityOnHand, double totalSales, double totalCost, double totalProfitPercent, String category, int warehouse, boolean isBelowFive){
+        this.id = id;
+        this.name = name;
+        this.sellingPrice = sellingPrice;
+        this.costPrice = costPrice;
+        this.quantityOnHand = quantityOnHand;
+        this.totalSales = totalSales;
+        this.totalCost = totalCost;
+        this.totalProfitPercent = totalProfitPercent;
+        this.category = category;
+        this.Warehouse = warehouse;
+        this.IsBelowFive = isBelowFive;
     }
 
     public int getId(){
-        return Id;
+        return id;
     }
 
 

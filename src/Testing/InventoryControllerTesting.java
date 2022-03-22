@@ -22,8 +22,8 @@ public class InventoryControllerTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
-        ArrayList<Product> products = new InventoryController().GetAllProductsDecreasingProfitPercent();
+        storeFront.loadWarehouseData();
+        ArrayList<Product> products = new InventoryController().getAllProductsDecreasingProfitPercent();
 
         assertEquals(  1421.3, products.get(0).getTotalProfitPercent(), 0.001);
         assertEquals( 1241.3, products.get(1).getTotalProfitPercent(), 0.001);
@@ -43,8 +43,8 @@ public class InventoryControllerTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
-        ArrayList<Product> products = new InventoryController().GetLowProducts();
+        storeFront.loadWarehouseData();
+        ArrayList<Product> products = new InventoryController().getLowProducts();
 
         assertEquals( 1, products.get(0).getQuantityOnHand());
         assertEquals( 2, products.get(1).getQuantityOnHand());
@@ -61,7 +61,7 @@ public class InventoryControllerTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
+        storeFront.loadWarehouseData();
 
         //Search Parameter
         int searchID = 1;
@@ -84,7 +84,7 @@ public class InventoryControllerTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
+        storeFront.loadWarehouseData();
 
         //Search Parameter
         int searchID = 1024;
@@ -103,7 +103,7 @@ public class InventoryControllerTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
+        storeFront.loadWarehouseData();
 
         //Search Parameter
         String searchName1 = "Name1";
@@ -126,7 +126,7 @@ public class InventoryControllerTesting {
 
 
         StoreFront storeFront = StoreFront.getInstance();
-        storeFront.LoadWarehouseData();
+        storeFront.loadWarehouseData();
 
         //Search Parameter
         String searchName = "NotARealProduct";

@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Invoice {
 
-    private int Id;
+    private int id;
     private Customer client;
-    private SalesPerson SalesPerson;
-    private double InvoiceTotalPrice;
-    private double DeliveryFee;
-    private boolean Delivery;
-    private String Status;
+    private SalesPerson salesPerson;
+    private double invoiceTotalPrice;
+    private double deliveryFee;
+    private boolean delivery;
+    private String status;
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public Customer getClient() {
@@ -29,75 +29,75 @@ public class Invoice {
     }
 
     public Inventory.Models.SalesPerson getSalesPerson() {
-        return SalesPerson;
+        return salesPerson;
     }
 
     public void setSalesPerson(Inventory.Models.SalesPerson salesPerson) {
-        SalesPerson = salesPerson;
+        this.salesPerson = salesPerson;
     }
 
     public double getInvoiceTotalPrice() {
-        return InvoiceTotalPrice;
+        return invoiceTotalPrice;
     }
 
     public void setInvoiceTotalPrice(double invoiceTotalPrice) {
-        InvoiceTotalPrice = invoiceTotalPrice;
+        this.invoiceTotalPrice = invoiceTotalPrice;
     }
 
     public double getDeliveryFee() {
-        return DeliveryFee;
+        return deliveryFee;
     }
 
     public void setDeliveryFee(double deliveryFee) {
-        DeliveryFee = deliveryFee;
+        this.deliveryFee = deliveryFee;
     }
 
     public boolean isDelivery() {
-        return Delivery;
+        return delivery;
     }
 
     public void setDelivery(boolean delivery) {
-        Delivery = delivery;
+        this.delivery = delivery;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
-    public ArrayList<Product> getItems() {
-        return Items;
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 
-    public void setItems(ArrayList<Product> items) {
-        Items = items;
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
-    private ArrayList<Product> Items;
-    private String Date;
+    private ArrayList<Product> products;
+    private String date;
 
-    public Invoice(int Id, Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date){
+    public Invoice(int id, Customer client, SalesPerson salesPerson, double invoiceTotalPrice, double deliveryFee, boolean delivery, String status, ArrayList<Product> products, String date){
 
-        this.Id = Id;
+        this.id = id;
         this.client = client;
-        this.SalesPerson = SalesPerson;
-        this.InvoiceTotalPrice = InvoiceTotalPrice;
-        this.DeliveryFee = DeliveryFee;
-        this.Delivery = Delivery;
-        this.Status = Status;
-        this.Items = Items;
-        this.Date = Date;
+        this.salesPerson = salesPerson;
+        this.invoiceTotalPrice = invoiceTotalPrice;
+        this.deliveryFee = deliveryFee;
+        this.delivery = delivery;
+        this.status = status;
+        this.products = products;
+        this.date = date;
 
     }
 }

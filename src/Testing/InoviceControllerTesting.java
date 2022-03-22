@@ -10,7 +10,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class InoviceControllerTesting {
 
@@ -24,19 +23,19 @@ public class InoviceControllerTesting {
         _testHelper.InitializeTestData();
 
         //Here you do any computation you need
-        StoreFront.getInstance().LoadWarehouseData();
-        StoreFront.getInstance().LoadClientData();
-        StoreFront.getInstance().LoadInvoiceData();
-        StoreFront.getInstance().LoadSalespersonData();
+        StoreFront.getInstance().loadWarehouseData();
+        StoreFront.getInstance().loadCustomerData();
+        StoreFront.getInstance().loadInvoiceData();
+        StoreFront.getInstance().loadSalespersonData();
 
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(0));
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(1));
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(0));
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(1));
 
-        Customer client = StoreFront.getInstance().GetClients().get(0);
-        SalesPerson salesPerson = StoreFront.getInstance().GetSalesPeople().get(0);
+        Customer client = StoreFront.getInstance().getCustomers().get(0);
+        SalesPerson salesPerson = StoreFront.getInstance().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 30.44;
         boolean Delivery = true;
@@ -49,7 +48,7 @@ public class InoviceControllerTesting {
 
 
 
-        assertEquals(5,  StoreFront.getInstance().GetInvoces().size());
+        assertEquals(5,  StoreFront.getInstance().getInvoces().size());
         //Once you finish your test you need to verify that the result is equal to the expected results
         //to do that you make the assert
 
@@ -67,19 +66,19 @@ public class InoviceControllerTesting {
         _testHelper.InitializeTestData();
 
         //Here you do any computation you need
-        StoreFront.getInstance().LoadWarehouseData();
-        StoreFront.getInstance().LoadClientData();
-        StoreFront.getInstance().LoadInvoiceData();
-        StoreFront.getInstance().LoadSalespersonData();
+        StoreFront.getInstance().loadWarehouseData();
+        StoreFront.getInstance().loadCustomerData();
+        StoreFront.getInstance().loadInvoiceData();
+        StoreFront.getInstance().loadSalespersonData();
 
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(0));
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(1));
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(0));
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(1));
 
-        Customer client = StoreFront.getInstance().GetClients().get(0);
-        SalesPerson salesPerson = StoreFront.getInstance().GetSalesPeople().get(0);
+        Customer client = StoreFront.getInstance().getCustomers().get(0);
+        SalesPerson salesPerson = StoreFront.getInstance().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -92,7 +91,7 @@ public class InoviceControllerTesting {
 
 
 
-        assertEquals(5,  StoreFront.getInstance().GetInvoces().size());
+        assertEquals(5,  StoreFront.getInstance().getInvoces().size());
         //Once you finish your test you need to verify that the result is equal to the expected results
         //to do that you make the assert
 
@@ -110,18 +109,18 @@ public class InoviceControllerTesting {
         _testHelper.InitializeTestData();
 
         //Here you do any computation you need
-        StoreFront.getInstance().LoadWarehouseData();
-        StoreFront.getInstance().LoadClientData();
-        StoreFront.getInstance().LoadInvoiceData();
-        StoreFront.getInstance().LoadSalespersonData();
+        StoreFront.getInstance().loadWarehouseData();
+        StoreFront.getInstance().loadCustomerData();
+        StoreFront.getInstance().loadInvoiceData();
+        StoreFront.getInstance().loadSalespersonData();
 
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(0));
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(0));
 
-        Customer client = StoreFront.getInstance().GetClients().get(0);
-        SalesPerson salesPerson = StoreFront.getInstance().GetSalesPeople().get(0);
+        Customer client = StoreFront.getInstance().getCustomers().get(0);
+        SalesPerson salesPerson = StoreFront.getInstance().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -134,7 +133,7 @@ public class InoviceControllerTesting {
 
 
 
-        assertEquals(5,  StoreFront.getInstance().GetInvoces().size());
+        assertEquals(5,  StoreFront.getInstance().getInvoces().size());
         //Once you finish your test you need to verify that the result is equal to the expected results
         //to do that you make the assert
 
@@ -151,17 +150,17 @@ public class InoviceControllerTesting {
         _testHelper.InitializeTestData();
 
         //Here you do any computation you need
-        StoreFront.getInstance().LoadWarehouseData();
-        StoreFront.getInstance().LoadClientData();
-        StoreFront.getInstance().LoadInvoiceData();
-        StoreFront.getInstance().LoadSalespersonData();
+        StoreFront.getInstance().loadWarehouseData();
+        StoreFront.getInstance().loadCustomerData();
+        StoreFront.getInstance().loadInvoiceData();
+        StoreFront.getInstance().loadSalespersonData();
 
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
 
-        Customer client = StoreFront.getInstance().GetClients().get(0);
-        SalesPerson salesPerson = StoreFront.getInstance().GetSalesPeople().get(0);
+        Customer client = StoreFront.getInstance().getCustomers().get(0);
+        SalesPerson salesPerson = StoreFront.getInstance().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -192,18 +191,18 @@ public class InoviceControllerTesting {
         _testHelper.InitializeTestData();
 
         //Here you do any computation you need
-        StoreFront.getInstance().LoadWarehouseData();
-        StoreFront.getInstance().LoadClientData();
-        StoreFront.getInstance().LoadInvoiceData();
-        StoreFront.getInstance().LoadSalespersonData();
+        StoreFront.getInstance().loadWarehouseData();
+        StoreFront.getInstance().loadCustomerData();
+        StoreFront.getInstance().loadInvoiceData();
+        StoreFront.getInstance().loadSalespersonData();
 
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(0));
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(0));
 
         Customer client = null;
-        SalesPerson salesPerson = StoreFront.getInstance().GetSalesPeople().get(0);
+        SalesPerson salesPerson = StoreFront.getInstance().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -235,16 +234,16 @@ public class InoviceControllerTesting {
         _testHelper.InitializeTestData();
 
         //Here you do any computation you need
-        StoreFront.getInstance().LoadWarehouseData();
-        StoreFront.getInstance().LoadClientData();
-        StoreFront.getInstance().LoadInvoiceData();
-        StoreFront.getInstance().LoadSalespersonData();
+        StoreFront.getInstance().loadWarehouseData();
+        StoreFront.getInstance().loadCustomerData();
+        StoreFront.getInstance().loadInvoiceData();
+        StoreFront.getInstance().loadSalespersonData();
 
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(StoreFront.getInstance().getWarehouse1().GetProducts().get(0));
-        Customer client = StoreFront.getInstance().GetClients().get(0);
+        products.add(StoreFront.getInstance().getWarehouse1().getProducts().get(0));
+        Customer client = StoreFront.getInstance().getCustomers().get(0);
         SalesPerson salesPerson = null;
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;

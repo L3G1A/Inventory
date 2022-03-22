@@ -21,9 +21,9 @@ public class WarehouseTestCases {
         try{
             Warehouse warehouse = new Warehouse(1);
 
-            warehouse.LoadProductData();
+            warehouse.loadProductData();
 
-            assertEquals(3, warehouse.GetProducts().size());
+            assertEquals(3, warehouse.getProducts().size());
 
         }
        catch (Exception e)

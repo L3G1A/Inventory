@@ -7,24 +7,21 @@ import java.util.List;
 
 public class Warehouse {
 
-    private ArrayList<Product> Products = new ArrayList<Product>();
+    private ArrayList<Product> products = new ArrayList<Product>();
     private int id;
 
     public Warehouse(int id){
         this.id = id;
-        LoadProductData();
+        loadProductData();
     }
 
-    public ArrayList<Product> GetProducts(){
-        return this.Products;
+    public ArrayList<Product> getProducts(){
+        return this.products;
     }
 
-    public ArrayList<Product> getProducts() {
-        return Products;
-    }
 
     public void setProducts(ArrayList<Product> products) {
-        Products = products;
+        this.products = products;
     }
 
     public int getId() {
@@ -35,7 +32,7 @@ public class Warehouse {
         this.id = id;
     }
 
-    public void LoadProductData() {
+    public void loadProductData() {
         //Creation Scheme
         //Product: id, Name, SellingPrice, CostPrice, QuantityOnHand, TotalSales, TotalCost, TotalProfitPercent, Category, IsBelowFive, warehouse
     //public Product(int Id, String Name, double SellingPrice, int QuantityOnHand, double TotalSales, double TotalCost, double TotalProfitPercent, String Category, int Warehouse, boolean IsBelowFive){
@@ -52,7 +49,7 @@ public class Warehouse {
                 String[] productData = line.replace("\"", "").split(",");
 
                 if(Integer.valueOf(productData[10]) == this.id){
-                    this.Products.add(new Product(Integer.valueOf(productData[0]), productData[1], Double.valueOf(productData[2]), Double.valueOf(productData[3]), Integer.valueOf(productData[4]), Double.valueOf(productData[5]), Double.valueOf(productData[6]), Double.valueOf(productData[7]), productData[8], Integer.valueOf(productData[10]), Boolean.valueOf(productData[9])));
+                    this.products.add(new Product(Integer.valueOf(productData[0]), productData[1], Double.valueOf(productData[2]), Double.valueOf(productData[3]), Integer.valueOf(productData[4]), Double.valueOf(productData[5]), Double.valueOf(productData[6]), Double.valueOf(productData[7]), productData[8], Integer.valueOf(productData[10]), Boolean.valueOf(productData[9])));
                 }
             }
         }

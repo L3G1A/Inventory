@@ -1,28 +1,28 @@
 package Inventory.Models;
 
 public class SalesPerson extends Person {
-    private double CommissionPercent;
-    private double TotalCommissionEarned;
+    private double commissionPercent;
+    private double totalCommissionEarned;
 
-    public SalesPerson(int Id, String FirstName, String LastName, double CommissionPercent, double TotalCommissionEarned) {
-        super(Id, FirstName, LastName);
-        this.CommissionPercent = CommissionPercent;
-        this.TotalCommissionEarned = TotalCommissionEarned;
+    public SalesPerson(int id, String firstName, String lastName, double commissionPercent, double totalCommissionEarned) {
+        super(id, firstName, lastName);
+        this.commissionPercent = commissionPercent;
+        this.totalCommissionEarned = totalCommissionEarned;
     }
 
     public double getCommissionPercent() {
-        return CommissionPercent;
+        return commissionPercent;
     }
 
     public void setCommissionPercent(double commissionPercent) {
-        CommissionPercent = commissionPercent;
+        this.commissionPercent = commissionPercent;
     }
 
     public double getTotalCommissionEarned() {
-        return TotalCommissionEarned;
+        return totalCommissionEarned;
     }
 
     public void setTotalCommissionEarned(double totalCommissionEarned) {
-        TotalCommissionEarned = totalCommissionEarned;
+        this.totalCommissionEarned = totalCommissionEarned;
     }
 }

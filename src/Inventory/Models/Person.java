@@ -1,41 +1,38 @@
 package Inventory.Models;
 
 public class Person {
-    private String FirstName;
-    private String LastName;
-    private int Id;
+    private String firstName;
+    private String lastName;
+    private int id;
 
-    public Person(int Id, String FirstName, String LastName){
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.Id = Id;
+    public Person(int id, String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
-    public int GetId(){
-        return Id;
-    }
 }

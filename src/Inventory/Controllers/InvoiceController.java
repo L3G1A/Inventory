@@ -21,15 +21,15 @@ public class InvoiceController {
             CSVWriter writer = new CSVWriter(output);
             String items = "";
             int i = 0;
-            for(Product product : invoice.getItems()){
+            for(Product product : invoice.getProducts()){
                 items += String.valueOf(product.getId());
-                if(i < invoice.getItems().size()){
+                if(i < invoice.getProducts().size()){
                     items += "-";
                 }
                 i++;
             }
 
-            String[] invoice1 = {String.valueOf(invoice.getId()), String.valueOf(invoice.getClient().GetId()), String.valueOf(invoice.getSalesPerson().getId()), String.valueOf(invoice.getInvoiceTotalPrice()), String.valueOf(invoice.getDeliveryFee()), String.valueOf(invoice.isDelivery()), invoice.getStatus(), items, invoice.getDate()};
+            String[] invoice1 = {String.valueOf(invoice.getId()), String.valueOf(invoice.getClient().getId()), String.valueOf(invoice.getSalesPerson().getId()), String.valueOf(invoice.getInvoiceTotalPrice()), String.valueOf(invoice.getDeliveryFee()), String.valueOf(invoice.isDelivery()), invoice.getStatus(), items, invoice.getDate()};
             writer.writeNext(invoice1);
         }
         catch (IOException e) {
@@ -37,7 +37,7 @@ public class InvoiceController {
         }
     }
     public void createInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date) throws Exception {
-       int id = StoreFront.getInstance().GetInvoces().size();
+       int id = StoreFront.getInstance().getInvoces().size();
         if(Items.size() == 0){
             throw new Exception("Invoice cannot have empty items");
         }

@@ -3,8 +3,6 @@ package Inventory.Models;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class StoreFront {
@@ -20,46 +18,40 @@ public class StoreFront {
      */
     private static StoreFront _storefront;
 
-    private ArrayList<Customer> Clients = new ArrayList<Customer>();
+    private ArrayList<Customer> customers = new ArrayList<Customer>();
 
-    public static StoreFront get_storefront() {
-        return _storefront;
+
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
     }
 
-    public static void set_storefront(StoreFront _storefront) {
-        StoreFront._storefront = _storefront;
-    }
-
-    public ArrayList<Customer> getClients() {
-        return Clients;
-    }
-
-    public void setClients(ArrayList<Customer> clients) {
-        Clients = clients;
+    public void setCustomers(ArrayList<Customer> customers) {
+        this.customers = customers;
     }
 
     public ArrayList<Warehouse> getWarehouses() {
-        return Warehouses;
+        return warehouses;
     }
 
     public void setWarehouses(ArrayList<Warehouse> warehouses) {
-        Warehouses = warehouses;
+        this.warehouses = warehouses;
     }
 
     public ArrayList<Invoice> getInvoices() {
-        return Invoices;
+        return invoices;
     }
 
     public void setInvoices(ArrayList<Invoice> invoices) {
-        Invoices = invoices;
+        this.invoices = invoices;
     }
 
     public ArrayList<SalesPerson> getSalesPeople() {
-        return SalesPeople;
+        return salesPeople;
     }
 
     public void setSalesPeople(ArrayList<SalesPerson> salesPeople) {
-        SalesPeople = salesPeople;
+        this.salesPeople = salesPeople;
     }
 
     public Warehouse getWarehouse1() {
@@ -78,12 +70,12 @@ public class StoreFront {
         this.warehouse2 = warehouse2;
     }
 
-    private ArrayList<Warehouse> Warehouses;
+    private ArrayList<Warehouse> warehouses;
 
 
-    private ArrayList<Invoice> Invoices = new ArrayList<Invoice>();
+    private ArrayList<Invoice> invoices = new ArrayList<Invoice>();
 
-    private ArrayList<SalesPerson> SalesPeople = new ArrayList<SalesPerson>();
+    private ArrayList<SalesPerson> salesPeople = new ArrayList<SalesPerson>();
 
     private Warehouse warehouse1;
 
@@ -101,11 +93,8 @@ public class StoreFront {
     /*
             We need to add in functions that will load the data to the lists from the files
      */
-    public ArrayList<SalesPerson> GetSalesPeople(){
-        return SalesPeople;
-    }
 
-    public void LoadSalespersonData(){
+    public void loadSalespersonData(){
         //Creation Scheme
         //Salesperson: id, firstname, lastname, CommisionPercent, TotalCommissionEarned
         //(int Id, String FirstName, String LastName, double CommissionPercent, double TotalCommissionEarned) {
@@ -119,7 +108,7 @@ public class StoreFront {
             while ((line = reader.readLine()) != null) {
                 String[] salespersonData = line.replace("\"", "").split(",");
 
-                this.SalesPeople.add(new SalesPerson(Integer.valueOf(salespersonData[0]), salespersonData[1], salespersonData[2], Double.valueOf(salespersonData[3]), Double.valueOf(salespersonData[4])));
+                this.salesPeople.add(new SalesPerson(Integer.valueOf(salespersonData[0]), salespersonData[1], salespersonData[2], Double.valueOf(salespersonData[3]), Double.valueOf(salespersonData[4])));
 
             }
         }
@@ -130,16 +119,13 @@ public class StoreFront {
 
     }
 
-    public ArrayList<Customer> GetClients(){
-        return Clients;
-    }
 
 
-    public void LoadClientData(){
+    public void loadCustomerData(){
         //Creation Scheme
         //Customer: id, firstname, lastname, StreetAddress, Country, State, ZipCode, SalesTaxPercent, City, {Orders}
         //(int Id, String FirstName, String LastName, String StreetAddress, String Country, String State, int ZipCode, double SalesTaxPercent, String City) {
-        this.setClients(new ArrayList<>());
+        this.setCustomers(new ArrayList<>());
 
         String file = System.getProperty("user.dir") + "\\Databases\\customerdatabase.csv";
         try
@@ -150,7 +136,7 @@ public class StoreFront {
             while ((line = reader.readLine()) != null) {
                 String[] clientData = line.replace("\"", "").split(",");
 
-                this.Clients.add(new Customer(Integer.valueOf(clientData[0]), clientData[1], clientData[2], clientData[3], clientData[4], clientData[5], Integer.valueOf(clientData[6]), Double.valueOf(clientData[7]), clientData[8]));
+                this.customers.add(new Customer(Integer.valueOf(clientData[0]), clientData[1], clientData[2], clientData[3], clientData[4], clientData[5], Integer.valueOf(clientData[6]), Double.valueOf(clientData[7]), clientData[8]));
 
             }
         }
@@ -160,11 +146,11 @@ public class StoreFront {
         }
     }
 
-    public ArrayList<Invoice> GetInvoces(){
-        return Invoices;
+    public ArrayList<Invoice> getInvoces(){
+        return invoices;
     }
 
-    public void LoadInvoiceData(){
+    public void loadInvoiceData(){
         this.setInvoices(new ArrayList<>());
 
         //Creation Scheme
@@ -181,8 +167,8 @@ public class StoreFront {
                 String[] invoiceData = line.replace("\"", "").split(",");
                 String[] cusomterItems = invoiceData[7].split("-");
                 ArrayList<Product> products = new ArrayList<>();
-                products.addAll(warehouse1.GetProducts());
-                products.addAll(warehouse2.GetProducts());
+                products.addAll(warehouse1.getProducts());
+                products.addAll(warehouse2.getProducts());
                 ArrayList<Product> invoiceProducts = new ArrayList<>();
 
                 for (String item : cusomterItems) {
@@ -194,18 +180,18 @@ public class StoreFront {
                     }
                 }
                 Customer client = null;
-                for(Customer customer : Clients){
-                    if(customer.GetId() == Integer.valueOf(invoiceData[1])){
+                for(Customer customer : customers){
+                    if(customer.getId() == Integer.valueOf(invoiceData[1])){
                         client = customer;
                     }
                 }
                 SalesPerson salesPerson = null;
-                for(SalesPerson salesperson : SalesPeople){
-                    if(salesperson.GetId() == Integer.valueOf(invoiceData[2])){
+                for(SalesPerson salesperson : salesPeople){
+                    if(salesperson.getId() == Integer.valueOf(invoiceData[2])){
                         salesPerson = salesperson;
                     }
                 }
-                this.Invoices.add(new Invoice(Integer.valueOf(invoiceData[0]), client, salesPerson, Double.valueOf(invoiceData[3]), Double.valueOf(invoiceData[4]), Boolean.valueOf(invoiceData[5]), invoiceData[6], invoiceProducts, invoiceData[7]));
+                this.invoices.add(new Invoice(Integer.valueOf(invoiceData[0]), client, salesPerson, Double.valueOf(invoiceData[3]), Double.valueOf(invoiceData[4]), Boolean.valueOf(invoiceData[5]), invoiceData[6], invoiceProducts, invoiceData[7]));
 
             }
         }
@@ -219,13 +205,13 @@ public class StoreFront {
 
 
 
-    public void LoadWarehouseData(){
+    public void loadWarehouseData(){
         if(warehouse1 == null && warehouse2 == null){
             warehouse1 = new Warehouse(1);
             warehouse2 = new Warehouse(2);
         }else{
-            warehouse1.LoadProductData();
-            warehouse2.LoadProductData();
+            warehouse1.loadProductData();
+            warehouse2.loadProductData();
         }
 
 
