@@ -36,7 +36,7 @@ public class InvoiceController {
             e.printStackTrace();
         }
     }
-    public void createInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date) throws Exception {
+    public void createInvoice(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date) throws Exception {
        int id = StoreFront.getInstance().getInvoces().size();
         if(Items.size() == 0){
             throw new Exception("Invoice cannot have empty items");

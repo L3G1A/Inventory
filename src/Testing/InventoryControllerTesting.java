@@ -6,22 +6,34 @@ import Inventory.Models.StoreFront;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class InventoryControllerTesting {
+
     TestHelper _testHelper = new TestHelper();
+    StoreFront storeFront;
 
-
-    @Test
-    public void GetAllProductsDecreasingProfitPercentTest() {
+    @Before
+    public void initializeData(){
         _testHelper.ClearTestData();
 
         _testHelper.InitializeTestData();
 
+        storeFront = StoreFront.getInstance();
+    }
 
-        StoreFront storeFront = StoreFront.getInstance();
+    @After
+    public void clearData(){
+        _testHelper.ClearTestData();
+    }
+
+    @Test
+    public void GetAllProductsDecreasingProfitPercentTest() {
+
         storeFront.loadWarehouseData();
         ArrayList<Product> products = new InventoryController().getAllProductsDecreasingProfitPercent();
 
@@ -31,18 +43,11 @@ public class InventoryControllerTesting {
         assertEquals( 43.3, products.get(3).getTotalProfitPercent(), 0.001);
         assertEquals( 42.3, products.get(4).getTotalProfitPercent(), 0.001);
 
-        _testHelper.ClearTestData();
     }
-
 
     @Test
     public void GetAllLowProducts() {
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
         storeFront.loadWarehouseData();
         ArrayList<Product> products = new InventoryController().getLowProducts();
 
@@ -50,17 +55,11 @@ public class InventoryControllerTesting {
         assertEquals( 2, products.get(1).getQuantityOnHand());
         assertEquals( 4, products.get(2).getQuantityOnHand());
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void ProductSearchByID(){
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
         storeFront.loadWarehouseData();
 
         //Search Parameter
@@ -73,17 +72,11 @@ public class InventoryControllerTesting {
         searchID++;
         assertEquals(searchID, new InventoryController().searchByID(searchID).getId());
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void ProductSearchByIDNoMatch(){
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
         storeFront.loadWarehouseData();
 
         //Search Parameter
@@ -92,17 +85,11 @@ public class InventoryControllerTesting {
         //Test Search
         assertNull(new InventoryController().searchByID(searchID)); //No product returned
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void ProductSearchByName(){
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
         storeFront.loadWarehouseData();
 
         //Search Parameter
@@ -115,17 +102,11 @@ public class InventoryControllerTesting {
         assertEquals(searchName2, new InventoryController().searchByName(searchName2).getName());
         assertEquals(searchName3, new InventoryController().searchByName(searchName3).getName());
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void ProductSearchByNameNoMatch(){
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
         storeFront.loadWarehouseData();
 
         //Search Parameter
@@ -134,7 +115,6 @@ public class InventoryControllerTesting {
         //Test Search
         assertNull(new InventoryController().searchByName(searchName)); //No product returned
 
-        _testHelper.ClearTestData();
     }
 
 
