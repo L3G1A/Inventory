@@ -7,6 +7,7 @@ public class Customer extends Person {
     private String state;
     private int zipCode;
     private double salesTaxPercent;
+    private String city;
 
     public String getCountry() {
         return country;
@@ -41,11 +42,11 @@ public class Customer extends Person {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getStreetAddress() {
@@ -56,7 +57,6 @@ public class Customer extends Person {
         this.streetAddress = streetAddress;
     }
 
-    private String City;
 
     public Customer(int id, String firstName, String lastName, String streetAddress, String country, String state, int zipCode, double salesTaxPercent, String city) {
         super(id, firstName, lastName);
@@ -65,7 +65,7 @@ public class Customer extends Person {
         this.state = state;
         this.zipCode = zipCode;
         this.salesTaxPercent = salesTaxPercent;
-        this.City = city;
+        this.city = city;
     }
 
 

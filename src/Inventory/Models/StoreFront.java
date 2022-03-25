@@ -17,10 +17,12 @@ public class StoreFront {
         StoreFront storeFront = StoreFront.getInstance();
      */
     private static StoreFront _storefront;
-
     private ArrayList<Customer> customers = new ArrayList<Customer>();
-
-
+    private ArrayList<Invoice> invoices = new ArrayList<Invoice>();
+    private ArrayList<SalesPerson> salesPeople = new ArrayList<SalesPerson>();
+    private Warehouse warehouse1;
+    private Warehouse warehouse2;
+    private ArrayList<Warehouse> warehouses;
 
     public ArrayList<Customer> getCustomers() {
         return customers;
@@ -70,16 +72,9 @@ public class StoreFront {
         this.warehouse2 = warehouse2;
     }
 
-    private ArrayList<Warehouse> warehouses;
 
 
-    private ArrayList<Invoice> invoices = new ArrayList<Invoice>();
 
-    private ArrayList<SalesPerson> salesPeople = new ArrayList<SalesPerson>();
-
-    private Warehouse warehouse1;
-
-    private Warehouse warehouse2;
 
 
     public static  StoreFront getInstance(){

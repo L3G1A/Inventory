@@ -10,6 +10,9 @@ public class Product {
     private double totalCost;
     private double totalProfitPercent;
     private String category;
+    private int warehouse;
+    private boolean isBelowFive;
+
 
     public double getTotalSales() {
         return totalSales;
@@ -27,37 +30,21 @@ public class Product {
         this.category = category;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "Id=" + id +
-                ", Name='" + name + '\'' +
-                ", SellingPrice=" + sellingPrice +
-                ", CostPrice=" + costPrice +
-                ", QuantityOnHand=" + quantityOnHand +
-                ", TotalSales=" + totalSales +
-                ", TotalCost=" + totalCost +
-                ", TotalProfitPercent=" + totalProfitPercent +
-                ", Category='" + category + '\'' +
-                ", Warehouse=" + Warehouse +
-                ", IsBelowFive=" + IsBelowFive +
-                '}';
-    }
 
     public int getWarehouse() {
-        return Warehouse;
+        return warehouse;
     }
 
     public void setWarehouse(int warehouse) {
-        Warehouse = warehouse;
+        this.warehouse = warehouse;
     }
 
     public boolean isBelowFive() {
-        return IsBelowFive;
+        return isBelowFive;
     }
 
     public void setBelowFive(boolean belowFive) {
-        IsBelowFive = belowFive;
+        isBelowFive = belowFive;
     }
 
     public void setId(int id) {
@@ -112,8 +99,7 @@ public class Product {
         this.totalProfitPercent = totalProfitPercent;
     }
 
-    private int Warehouse;
-    private boolean IsBelowFive;
+
 
     public Product(int id, String name, double sellingPrice, double costPrice, int quantityOnHand, double totalSales, double totalCost, double totalProfitPercent, String category, int warehouse, boolean isBelowFive){
         this.id = id;
@@ -125,13 +111,15 @@ public class Product {
         this.totalCost = totalCost;
         this.totalProfitPercent = totalProfitPercent;
         this.category = category;
-        this.Warehouse = warehouse;
-        this.IsBelowFive = isBelowFive;
+        this.warehouse = warehouse;
+        this.isBelowFive = isBelowFive;
     }
 
     public int getId(){
         return id;
     }
+
+    public double calculateProfitPercent(){return 0;}
 
 
 }

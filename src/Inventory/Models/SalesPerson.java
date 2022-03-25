@@ -25,4 +25,6 @@ public class SalesPerson extends Person {
     public void setTotalCommissionEarned(double totalCommissionEarned) {
         this.totalCommissionEarned = totalCommissionEarned;
     }
+
+    public void addCommision(){}
 }

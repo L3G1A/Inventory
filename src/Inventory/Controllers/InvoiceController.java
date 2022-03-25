@@ -29,7 +29,7 @@ public class InvoiceController {
                 i++;
             }
 
-            String[] invoice1 = {String.valueOf(invoice.getId()), String.valueOf(invoice.getClient().getId()), String.valueOf(invoice.getSalesPerson().getId()), String.valueOf(invoice.getInvoiceTotalPrice()), String.valueOf(invoice.getDeliveryFee()), String.valueOf(invoice.isDelivery()), invoice.getStatus(), items, invoice.getDate()};
+            String[] invoice1 = {String.valueOf(invoice.getId()), String.valueOf(invoice.getCustomer().getId()), String.valueOf(invoice.getSalesPerson().getId()), String.valueOf(invoice.getInvoiceTotalPrice()), String.valueOf(invoice.getDeliveryFee()), String.valueOf(invoice.isDelivery()), invoice.getStatus(), items, invoice.getDate()};
             writer.writeNext(invoice1);
         }
         catch (IOException e) {

@@ -5,12 +5,15 @@ import java.util.ArrayList;
 public class Invoice {
 
     private int id;
-    private Customer client;
+    private Customer customer;
     private SalesPerson salesPerson;
     private double invoiceTotalPrice;
     private double deliveryFee;
     private boolean delivery;
     private String status;
+    private ArrayList<Product> products;
+    private String date;
+
 
     public int getId() {
         return id;
@@ -20,12 +23,12 @@ public class Invoice {
         this.id = id;
     }
 
-    public Customer getClient() {
-        return client;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setClient(Customer client) {
-        this.client = client;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Inventory.Models.SalesPerson getSalesPerson() {
@@ -84,13 +87,12 @@ public class Invoice {
         this.date = date;
     }
 
-    private ArrayList<Product> products;
-    private String date;
 
-    public Invoice(int id, Customer client, SalesPerson salesPerson, double invoiceTotalPrice, double deliveryFee, boolean delivery, String status, ArrayList<Product> products, String date){
+
+    public Invoice(int id, Customer customer, SalesPerson salesPerson, double invoiceTotalPrice, double deliveryFee, boolean delivery, String status, ArrayList<Product> products, String date){
 
         this.id = id;
-        this.client = client;
+        this.customer = customer;
         this.salesPerson = salesPerson;
         this.invoiceTotalPrice = invoiceTotalPrice;
         this.deliveryFee = deliveryFee;
