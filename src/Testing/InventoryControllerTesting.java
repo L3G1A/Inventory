@@ -34,7 +34,7 @@ public class InventoryControllerTesting {
     @Test
     public void GetAllProductsDecreasingProfitPercentTest() {
 
-        storeFront.loadWarehouseData();
+        storeFront.accessDB().loadWarehouseData();
         ArrayList<Product> products = new InventoryController().getAllProductsDecreasingProfitPercent();
 
         assertEquals(  1421.3, products.get(0).getTotalProfitPercent(), 0.001);
@@ -48,7 +48,7 @@ public class InventoryControllerTesting {
     @Test
     public void GetAllLowProducts() {
 
-        storeFront.loadWarehouseData();
+        storeFront.accessDB().loadWarehouseData();
         ArrayList<Product> products = new InventoryController().getLowProducts();
 
         assertEquals( 1, products.get(0).getQuantityOnHand());
@@ -60,7 +60,7 @@ public class InventoryControllerTesting {
     @Test
     public void ProductSearchByID(){
 
-        storeFront.loadWarehouseData();
+        storeFront.accessDB().loadWarehouseData();
 
         //Search Parameter
         int searchID = 1;
@@ -77,7 +77,7 @@ public class InventoryControllerTesting {
     @Test
     public void ProductSearchByIDNoMatch(){
 
-        storeFront.loadWarehouseData();
+        storeFront.accessDB().loadWarehouseData();
 
         //Search Parameter
         int searchID = 1024;
@@ -90,7 +90,7 @@ public class InventoryControllerTesting {
     @Test
     public void ProductSearchByName(){
 
-        storeFront.loadWarehouseData();
+        storeFront.accessDB().loadWarehouseData();
 
         //Search Parameter
         String searchName1 = "Name1";
@@ -107,7 +107,7 @@ public class InventoryControllerTesting {
     @Test
     public void ProductSearchByNameNoMatch(){
 
-        storeFront.loadWarehouseData();
+        storeFront.accessDB().loadWarehouseData();
 
         //Search Parameter
         String searchName = "NotARealProduct";

@@ -10,8 +10,8 @@ public class InventoryController {
 
     public ArrayList<Product> getAllProductsDecreasingProfitPercent(){
         ArrayList<Product> products = new ArrayList<>();
-        products.addAll(StoreFront.getInstance().getWarehouse1().getProducts());
-        products.addAll(StoreFront.getInstance().getWarehouse2().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse1().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse2().getProducts());
         for (int i = 0; i < products.size()-1; i++)
         {
             for (int j = 0; j < products.size()-i-1; j++){
@@ -25,8 +25,8 @@ public class InventoryController {
 
     public ArrayList<Product> getLowProducts(){
         ArrayList<Product> products = new ArrayList<>();
-        products.addAll(StoreFront.getInstance().getWarehouse1().getProducts());
-        products.addAll(StoreFront.getInstance().getWarehouse2().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse1().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse2().getProducts());
         ArrayList<Product> lowProducts = new ArrayList<>();
 
         for(Product product : products){
@@ -52,8 +52,8 @@ public class InventoryController {
     //Search by ID
     public Product searchByID(int id){
         ArrayList<Product> products = new ArrayList<>();
-        products.addAll(StoreFront.getInstance().getWarehouse1().getProducts());
-        products.addAll(StoreFront.getInstance().getWarehouse2().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse1().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse2().getProducts());
         for(Product p:products){ //Linear Search
             if(p.getId() == id){
                 return p;
@@ -67,8 +67,8 @@ public class InventoryController {
     //Search by Name
     public Product searchByName(String name){
         ArrayList<Product> products = new ArrayList<>();
-        products.addAll(StoreFront.getInstance().getWarehouse1().getProducts());
-        products.addAll(StoreFront.getInstance().getWarehouse2().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse1().getProducts());
+        products.addAll(StoreFront.getInstance().accessDB().getWarehouse2().getProducts());
         for(Product p:products){ //Linear Search
             if(p.getName().equals(name)){
                 return p;

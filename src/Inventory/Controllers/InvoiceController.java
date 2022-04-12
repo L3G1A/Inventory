@@ -37,7 +37,7 @@ public class InvoiceController {
         }
     }
     public void createInvoice(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date) throws Exception {
-       int id = StoreFront.getInstance().getInvoces().size();
+       int id = StoreFront.getInstance().accessDB().getInvoices().size();
         if(Items.size() == 0){
             throw new Exception("Invoice cannot have empty items");
         }
@@ -50,9 +50,9 @@ public class InvoiceController {
         }
         Invoice invoice = new Invoice(id, client, SalesPerson, InvoiceTotalPrice, DeliveryFee, Delivery, Status, Items, Date);
         saveInvoiceToDatastore(invoice);
-        ArrayList<Invoice> invoices = StoreFront.getInstance().getInvoices();
+        ArrayList<Invoice> invoices = StoreFront.getInstance().accessDB().getInvoices();
         invoices.add(invoice);
-        StoreFront.getInstance().setInvoices(invoices);
+        StoreFront.getInstance().accessDB().setInvoices(invoices);
     }
 
     public void editInvoice(){

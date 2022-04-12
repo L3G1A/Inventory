@@ -45,11 +45,11 @@ public class StoreFrontTesting {
     @Test
     public void LoadInvoiceDataTest() {
 
-        storeFront.loadWarehouseData();
-        storeFront.loadCustomerData();
+        storeFront.accessDB().loadWarehouseData();
+        storeFront.accessDB().loadCustomerData();
 
-        storeFront.loadInvoiceData();
-        assertEquals(4, storeFront.getInvoces().size());
+        storeFront.accessDB().loadInvoiceData();
+        assertEquals(4, storeFront.accessDB().getInvoices().size());
 
 
 
@@ -61,8 +61,8 @@ public class StoreFrontTesting {
     @Test
     public void LoadClientDataTest() {
 
-        storeFront.loadCustomerData();
-        assertEquals(2, storeFront.getCustomers().size());
+        storeFront.accessDB().loadCustomerData();
+        assertEquals(2, storeFront.accessDB().getCustomers().size());
 
 
 
@@ -73,8 +73,8 @@ public class StoreFrontTesting {
     @Test
     public void LoadSalesPersonDataTest() {
 
-        storeFront.loadSalespersonData();
-        assertEquals(2, storeFront.getCustomers().size());
+        storeFront.accessDB().loadSalespersonData();
+        assertEquals(2, storeFront.accessDB().getCustomers().size());
 
         assertNotNull( storeFront);
 
@@ -84,8 +84,8 @@ public class StoreFrontTesting {
     public void LoadWarehouseTestData() {
 
 
-        storeFront.loadWarehouseData();
-        assertEquals(3, storeFront.getWarehouse1().getProducts().size());
+        storeFront.accessDB().loadWarehouseData();
+        assertEquals(3, storeFront.accessDB().getWarehouse1().getProducts().size());
 
         assertNotNull( storeFront);
 

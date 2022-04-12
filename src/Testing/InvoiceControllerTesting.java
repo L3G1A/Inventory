@@ -26,10 +26,11 @@ public class InvoiceControllerTesting {
 
         storeFront = StoreFront.getInstance();
 
-        storeFront.loadWarehouseData();
-        storeFront.loadCustomerData();
-        storeFront.loadInvoiceData();
-        storeFront.loadSalespersonData();
+        storeFront.accessDB().loadWarehouseData();
+        storeFront.accessDB().loadCustomerData();
+        storeFront.accessDB().loadInvoiceData();
+        System.out.println(storeFront.accessDB().getInvoices().size());
+        storeFront.accessDB().loadSalespersonData();
     }
 
     @After
@@ -42,11 +43,11 @@ public class InvoiceControllerTesting {
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(storeFront.getWarehouse1().getProducts().get(0));
-        products.add(storeFront.getWarehouse1().getProducts().get(1));
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(0));
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(1));
 
-        Customer client = storeFront.getCustomers().get(0);
-        SalesPerson salesPerson = storeFront.getSalesPeople().get(0);
+        Customer client = storeFront.accessDB().getCustomers().get(0);
+        SalesPerson salesPerson = storeFront.accessDB().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 30.44;
         boolean Delivery = true;
@@ -56,7 +57,7 @@ public class InvoiceControllerTesting {
         // reateInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date){
         invoiceController.createInvoice(client, salesPerson, InvoiceTotalPrice, DeliveryFee, Delivery, status, products, date);
 
-        assertEquals(5,  storeFront.getInvoces().size());
+        assertEquals(5,  storeFront.accessDB().getInvoices().size());
         //Once you finish your test you need to verify that the result is equal to the expected results
         //to do that you make the assert
 
@@ -70,21 +71,22 @@ public class InvoiceControllerTesting {
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(storeFront.getWarehouse1().getProducts().get(0));
-        products.add(storeFront.getWarehouse1().getProducts().get(1));
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(0));
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(1));
 
-        Customer client = storeFront.getCustomers().get(0);
-        SalesPerson salesPerson = storeFront.getSalesPeople().get(0);
+        Customer client = storeFront.accessDB().getCustomers().get(0);
+        SalesPerson salesPerson = storeFront.accessDB().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
         String status = "Shipped";
         String date = "2-30-2022";
 
+
         // reateInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date){
         invoiceController.createInvoice(client, salesPerson, InvoiceTotalPrice, DeliveryFee, Delivery, status, products, date);
 
-        assertEquals(5,  storeFront.getInvoces().size());
+        assertEquals(5,  storeFront.accessDB().getInvoices().size());
         //Once you finish your test you need to verify that the result is equal to the expected results
         //to do that you make the assert
 
@@ -98,10 +100,10 @@ public class InvoiceControllerTesting {
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(storeFront.getWarehouse1().getProducts().get(0));
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(0));
 
-        Customer client = storeFront.getCustomers().get(0);
-        SalesPerson salesPerson = storeFront.getSalesPeople().get(0);
+        Customer client = storeFront.accessDB().getCustomers().get(0);
+        SalesPerson salesPerson = storeFront.accessDB().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -111,7 +113,7 @@ public class InvoiceControllerTesting {
         // reateInvioce(Customer client, SalesPerson SalesPerson, double InvoiceTotalPrice, double DeliveryFee, boolean Delivery, String Status, ArrayList<Product> Items, String Date){
         invoiceController.createInvoice(client, salesPerson, InvoiceTotalPrice, DeliveryFee, Delivery, status, products, date);
 
-        assertEquals(5,  storeFront.getInvoces().size());
+        assertEquals(5,  storeFront.accessDB().getInvoices().size());
         //Once you finish your test you need to verify that the result is equal to the expected results
         //to do that you make the assert
 
@@ -125,8 +127,8 @@ public class InvoiceControllerTesting {
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
 
-        Customer client = storeFront.getCustomers().get(0);
-        SalesPerson salesPerson = storeFront.getSalesPeople().get(0);
+        Customer client = storeFront.accessDB().getCustomers().get(0);
+        SalesPerson salesPerson = storeFront.accessDB().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -153,10 +155,10 @@ public class InvoiceControllerTesting {
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(storeFront.getWarehouse1().getProducts().get(0));
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(0));
 
         Customer client = null;
-        SalesPerson salesPerson = storeFront.getSalesPeople().get(0);
+        SalesPerson salesPerson = storeFront.accessDB().getSalesPeople().get(0);
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
         boolean Delivery = false;
@@ -184,8 +186,8 @@ public class InvoiceControllerTesting {
 
         InvoiceController invoiceController = new InvoiceController();
         ArrayList<Product> products = new ArrayList<>();
-        products.add(storeFront.getWarehouse1().getProducts().get(0));
-        Customer client = storeFront.getCustomers().get(0);
+        products.add(storeFront.accessDB().getWarehouse1().getProducts().get(0));
+        Customer client = storeFront.accessDB().getCustomers().get(0);
         SalesPerson salesPerson = null;
         double InvoiceTotalPrice = 234.32;
         double DeliveryFee = 0;
