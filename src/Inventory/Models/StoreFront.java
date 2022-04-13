@@ -16,7 +16,7 @@ public class StoreFront {
 
         StoreFront storeFront = StoreFront.getInstance();
      */
-    private static StoreFront _storefront;
+    private static StoreFront storefront;
 
     //Database
     private StoreDB db;
@@ -31,10 +31,10 @@ public class StoreFront {
 
     //Methods
     public static  StoreFront getInstance(){
-        if(_storefront == null) {
-            _storefront = new StoreFront();
+        if(storefront == null) {
+            storefront = new StoreFront();
         }
-        return _storefront;
+        return storefront;
     }
 
 }
