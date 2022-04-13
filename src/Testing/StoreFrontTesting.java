@@ -4,24 +4,33 @@ import Inventory.Models.StoreFront;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.*;
 
 public class StoreFrontTesting {
-    TestHelper _testHelper = new TestHelper();
 
+    TestHelper _testHelper = new TestHelper();
+    StoreFront storeFront;
+
+    @Before
+    public void initializeData(){
+        _testHelper.ClearTestData();
+
+        _testHelper.InitializeTestData();
+
+        storeFront = StoreFront.getInstance();
+    }
+
+    @After
+    public void clearData(){
+        _testHelper.ClearTestData();
+    }
 
     //this is an example test case, each class will have it own test case java file and class
     @Test
     public void test() {
 
-        //here we just initliaze the test data into the database and make sure they test databases are all clear
-        _testHelper.ClearTestData();
-
-        _testHelper.InitializeTestData();
-
-
         //Here you do any computation you need
-        StoreFront storeFront = StoreFront.getInstance();
+        //StoreFront storeFront = StoreFront.getInstance();
 
 
         //Once you finish your test you need to verify that the result is equal to the expected results
@@ -30,84 +39,56 @@ public class StoreFrontTesting {
         assertNotNull( storeFront);
 
         //once the assert is done you can then clear the data from the database
-        _testHelper.ClearTestData();
     }
 
 
     @Test
-    public void LoadInoivceDataTest() {
-        _testHelper.ClearTestData();
+    public void LoadInvoiceDataTest() {
 
-        _testHelper.InitializeTestData();
+        storeFront.accessDB().loadWarehouseData();
+        storeFront.accessDB().loadCustomerData();
 
-
-        StoreFront storeFront = StoreFront.getInstance();
-        storeFront.loadWarehouseData();
-        storeFront.loadCustomerData();
-
-        storeFront.loadInvoiceData();
-        assertEquals(4, storeFront.getInvoces().size());
+        storeFront.accessDB().loadInvoiceData();
+        assertEquals(4, storeFront.accessDB().getInvoices().size());
 
 
 
 
         assertNotNull( storeFront);
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void LoadClientDataTest() {
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
-        storeFront.loadCustomerData();
-        assertEquals(2, storeFront.getCustomers().size());
+        storeFront.accessDB().loadCustomerData();
+        assertEquals(2, storeFront.accessDB().getCustomers().size());
 
 
 
         assertNotNull( storeFront);
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void LoadSalesPersonDataTest() {
-        _testHelper.ClearTestData();
 
-        _testHelper.InitializeTestData();
-
-
-        StoreFront storeFront = StoreFront.getInstance();
-        storeFront.loadSalespersonData();
-        assertEquals(2, storeFront.getCustomers().size());
-
-
+        storeFront.accessDB().loadSalespersonData();
+        assertEquals(2, storeFront.accessDB().getCustomers().size());
 
         assertNotNull( storeFront);
 
-        _testHelper.ClearTestData();
     }
 
     @Test
     public void LoadWarehouseTestData() {
-        _testHelper.ClearTestData();
-
-        _testHelper.InitializeTestData();
 
 
-        StoreFront storeFront = StoreFront.getInstance();
-        storeFront.loadWarehouseData();
-        assertEquals(3, storeFront.getWarehouse1().getProducts().size());
-
-
+        storeFront.accessDB().loadWarehouseData();
+        assertEquals(3, storeFront.accessDB().getWarehouse1().getProducts().size());
 
         assertNotNull( storeFront);
 
-        _testHelper.ClearTestData();
     }
 
 
